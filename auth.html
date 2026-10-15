@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Log in or join · PADPAO Eastern Visayas</title>
+<meta name="description" content="Member sign-in and registration for PADPAO Eastern Visayas.">
+<meta name="theme-color" content="#0b2a6b">
+<meta name="robots" content="noindex">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/icons/favicon-48.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body class="auth-page" data-page="auth">
+
+<aside class="auth-side" aria-hidden="true">
+  <a href="index.html" class="brand" style="color:#fff"><span class="seal" style="width:44px;box-shadow:0 0 0 2px var(--gold)"><img src="assets/icons/logo-circle-256.png" alt=""></span><span><b style="color:#fff">PADPAO EV</b><small style="color:#c7d3f5">Eastern Visayas · Region 8</small></span></a>
+  <div>
+    <span class="seal"><img src="assets/icons/logo-circle-512.png" alt=""></span>
+    <h2>The member portal of PADPAO Eastern Visayas</h2>
+    <ul>
+      <li><svg class="i"><use href="#i-calendar"/></svg><span>Meeting agendas, minutes and resolutions</span></li>
+      <li><svg class="i"><use href="#i-bell"/></svg><span>Updates on SOSIA, RCSU 8 and DOLE 8 coordination</span></li>
+      <li><svg class="i"><use href="#i-shield"/></svg><span>Compliance and licensing guidance for your agency</span></li>
+    </ul>
+  </div>
+  <small style="color:#a9b8e6">© <span data-year>2026</span> PADPAO Eastern Visayas, Inc.</small>
+</aside>
+
+<main class="auth-main" id="main">
+  <div class="auth-top">
+    <a href="index.html" class="btn btn-outline btn-sm"><svg class="i i-sm"><use href="#i-back"/></svg>Home</a>
+    <button class="icon-btn" data-tip="Your password is never stored in plain text. Sign-in is handled over an encrypted connection." aria-label="About account security"><svg class="i"><use href="#i-shield"/></svg></button>
+  </div>
+  <div class="demo-banner" role="note"><svg class="i i-sm"><use href="#i-info"/></svg><span><b>Preview mode.</b> Accounts are saved only on this device and Google/Facebook sign-in is simulated. Connect the sign-in service to go live.</span></div>
+
+  <div class="auth-card">
+    <span class="seal"><img src="assets/icons/logo-circle-256.png" alt="PADPAO Eastern Visayas seal"></span>
+
+    <!-- LOGIN / SIGNUP tabs -->
+    <div id="tabbed">
+      <h1 id="auth-title">Welcome back</h1>
+      <p class="sub" id="auth-sub">Log in to the PADPAO EV member portal.</p>
+      <div class="tabs" role="tablist" data-active="login">
+        <span class="pill" aria-hidden="true"></span>
+        <button role="tab" id="tab-login" aria-controls="view-login" aria-selected="true" data-view="login">Log in</button>
+        <button role="tab" id="tab-signup" aria-controls="view-signup" aria-selected="false" data-view="signup" tabindex="-1">Sign up</button>
+      </div>
+      <div class="alert" id="alert" role="alert"></div>
+
+      <!-- LOGIN -->
+      <div class="view active" id="view-login" role="tabpanel" aria-labelledby="tab-login">
+        <div class="socials">
+          <button class="btn-social" data-provider="google" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1c.9-2.8 3.6-4.9 6.7-4.9z"/></svg>
+            Continue with Google</button>
+          <button class="btn-social fb" data-provider="facebook" type="button"><svg class="i"><use href="#i-facebook"/></svg>Continue with Facebook</button>
+        </div>
+        <div class="divider">or with email</div>
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="li-email">Email</label>
+            <div class="input-wrap"><svg class="i"><use href="#i-mail"/></svg><input class="input" id="li-email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="you@agency.ph"></div>
+            <span class="error-msg"><svg class="i i-sm"><use href="#i-alert"/></svg>Enter a valid email address.</span>
+          </div>
+          <div class="field">
+            <label for="li-pw">Password</label>
+            <div class="input-wrap"><svg class="i"><use href="#i-key"/></svg><input class="input has-toggle" id="li-pw" name="password" type="password" autocomplete="current-password" required placeholder="Your password">
+              <button type="button" class="toggle-pw" aria-label="Show password" aria-pressed="false"><svg class="i"><use href="#i-eye"/></svg></button></div>
+            <span class="error-msg"><svg class="i i-sm"><use href="#i-alert"/></svg>Enter your password.</span>
+          </div>
+          <div class="between">
+            <label class="check"><input type="checkbox" name="remember" checked>Keep me logged in</label>
+            <a href="#forgot" class="link" data-goto="forgot">Forgot password?</a>
+          </div>
+          <button class="btn btn-navy btn-block" type="submit"><span class="spinner"></span><span>Log in</span></button>
+        </form>
+        <p class="fineprint">New to PADPAO EV? <a href="?view=signup" class="link" data-view-link="signup">Create an account</a></p>
+      </div>
+
+      <!-- SIGNUP (3 steps: account → agency → confirm) -->
+      <div class="view" id="view-signup" role="tabpanel" aria-labelledby="tab-signup">
+        <div class="socials">
+          <button class="btn-social" data-provider="google" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1c.9-2.8 3.6-4.9 6.7-4.9z"/></svg>
+            Sign up with Google</button>
+          <button class="btn-social fb" data-provider="facebook" type="button"><svg class="i"><use href="#i-facebook"/></svg>Sign up with Facebook</button>
+        </div>
+        <div class="divider">or with email</div>
+        <div class="stepper" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
+        <p class="step-label" id="step-label">Step 1 of 3 · Your account</p>
+        <form id="signup-form" novalidate>
+          <div class="form-step active" data-step="1">
+            <div class="field">
+              <label for="su-name">Full name</label>
+              <div class="input-wrap"><svg class="i"><use href="#i-user"/></svg><input class="input" id="su-name" name="full_name" autocomplete="name" required placeholder="Juan Dela Cruz"></div>
+              <span class="error-msg"><svg class="i i-sm"><use href="#i-alert"/></svg>Enter your full name.</span>
+            </div>
+            <div class="field">
+              <label for="su-email">Email</label>
+              <div class="input-wrap"><svg class="i"><use href="#i-mail"/></svg><input class="input" id="su-email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="you@agency.ph"></div>
+              <span class="error-msg"><svg class="i i-sm"><use href="#i-alert"/></svg>Enter a valid email address.</span>
+            </div>
+            <div class="field">
+              <label for="su-pw">Password</label>
+              <div class="input-wrap"><svg class="i"><use href="#i-key"/></svg><input class="input has-toggle" id="su-pw" name="password" type="password" autocomplete="new-password" required placeholder="Create a strong password" aria-describedby="pw-rules">
+                <button type="button" class="toggle-pw" aria-label="Show password" aria-pressed="false"><svg class="i"><use href="#i-eye"/></svg></button></div>
+              <div class="meter" aria-hidden="true"><i></i></div>
+              <ul class="rules" id="pw-rules">
+                <li data-rule="len">8+ characters</li><li data-rule="case">Upper &amp; lower case</li>
+                <li data-rule="num">A number</li><li data-rule="sym">A symbol</li>
+              </ul>
+              <span class="error-msg"><svg class="i i-sm"><use href="#i-alert"/></svg>Use at least 8 characters with a mix of letters and numbers.</span>
+            </div>
+            <div class="field">
+              <label for="su-pw2">Confirm password</label>
+              <div class="input-wrap"><svg class="i"><use href="#i-key"/></svg><input class="input" id="su-pw2" name="password2" type="password" autocomplete="new-password" required placeholder="Type it again"></div>
+              <span class="error-msg"><svg class="i i-sm"><use href="#i-alert"/></svg>Passwords don't match.</span>
+            </div>
+            <div class="form-actions"><button type="button" class="btn btn-navy" data-next>Continue <svg class="i"><use href="#i-arrow"/></svg></button></div>
+          </div>
+
+          <div class="form-step" data-step="2">
+            <div class="field">
+              <label for="su-agency">Agency name</label>
+              <div class="input-wrap"><svg class="i"><use href="#i-building"/></svg><input class="input" id="su-agency" name="agency_name" autocomplete="organization" required placeholder="e.g. Leyte Guardians Security Agency"></div>
+              <span class="error-msg"><svg class="i i-sm"><use href="#i-alert"/></svg>Enter your agency's registered name.</span>
+            </div>
+            <div class="row-2">
+              <div class="field">
+                <label for="su-pos">Your position</label>
+                <div class="input-wrap"><svg class="i"><use href="#i-briefcase"/></svg>
+                  <select class="input" id="su-pos" name="position" required>
+                    <option value="">Select…</option><option>Owner / Operator</option><option>President / General Manager</option><option>Operations Manager</option><option>Authorized Representative</option>
+                  </select></div>
+                <span class="error-msg"><svg class="i i-sm"><use href="#i-alert"/></svg>Choose your position.</span>
+              </div>
+              <div class="field">
+                <label for="su-prov">Province</label>
+                <div class="input-wrap"><svg class="i"><use href="#i-pin"/></svg>
+                  <select class="input" id="su-prov" name="province" required>
+                    <option value="">Select…</option><option>Leyte</option><option>Southern Leyte</option><option>Biliran</option><option>Samar</option><option>Eastern Samar</option><option>Northern Samar</option>
+                  </select></div>
+                <span class="error-msg"><svg class="i i-sm"><use href="#i-alert"/></svg>Choose a province.</span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="su-lto">License to Operate no. <span class="opt">(optional)</span>
+                <span class="info-dot" tabindex="0" role="button" aria-label="What is the LTO?" data-tip="The License to Operate number issued by PNP SOSIA to your agency. Officers use it to verify your membership. You can add it later."><svg class="i i-sm"><use href="#i-info"/></svg></span></label>
+              <div class="input-wrap"><svg class="i"><use href="#i-file"/></svg><input class="input" id="su-lto" name="lto_number" placeholder="As shown on your LTO"></div>
+            </div>
+            <div class="field">
+              <label for="su-phone">Mobile number <span class="opt">(optional)</span></label>
+              <div class="input-wrap"><svg class="i"><use href="#i-phone"/></svg><input class="input" id="su-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="09xx xxx xxxx" pattern="^(\+?63|0)9\d{2}[\s-]?\d{3}[\s-]?\d{4}$"></div>
+              <span class="error-msg"><svg class="i i-sm"><use href="#i-alert"/></svg>Use a PH mobile number, e.g. 0917 123 4567.</span>
+            </div>
+            <div class="form-actions"><button type="button" class="btn btn-outline" data-prev><svg class="i"><use href="#i-back"/></svg>Back</button><button type="button" class="btn btn-navy" data-next>Continue</button></div>
+          </div>
+
+          <div class="form-step" data-step="3">
+            <div class="card" style="background:var(--soft);box-shadow:none;margin-bottom:14px" id="su-review"></div>
+            <div class="field">
+              <label class="check"><input type="checkbox" name="agree" required> <span>I confirm the details are true and I agree to PADPAO EV processing my information for membership, in line with the Data Privacy Act of 2012.</span></label>
+              <span class="error-msg"><svg class="i i-sm"><use href="#i-alert"/></svg>Please confirm to continue.</span>
+            </div>
+            <div class="form-actions"><button type="button" class="btn btn-outline" data-prev><svg class="i"><use href="#i-back"/></svg>Back</button>
+              <button type="submit" class="btn btn-gold"><span class="spinner"></span><span>Create account</span></button></div>
+          </div>
+        </form>
+        <p class="fineprint">Already a member? <a href="?view=login" class="link" data-view-link="login">Log in</a></p>
+      </div>
+    </div>
+
+    <!-- FORGOT -->
+    <div class="view" id="view-forgot">
+      <h1>Reset your password</h1>
+      <p class="sub">Enter your account email and we'll send you a secure reset link.</p>
+      <div class="alert" id="alert-forgot" role="alert"></div>
+      <form id="forgot-form" novalidate>
+        <div class="field">
+          <label for="fp-email">Email</label>
+          <div class="input-wrap"><svg class="i"><use href="#i-mail"/></svg><input class="input" id="fp-email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="you@agency.ph"></div>
+          <span class="error-msg"><svg class="i i-sm"><use href="#i-alert"/></svg>Enter a valid email address.</span>
+        </div>
+        <button class="btn btn-navy btn-block" type="submit"><span class="spinner"></span><span>Send reset link</span></button>
+      </form>
+      <p class="fineprint"><a href="?view=login" class="link" data-view-link="login"><svg class="i i-sm"><use href="#i-back"/></svg> Back to log in</a></p>
+      <p class="fineprint">Signed up with Google or Facebook? You don't need a password. Just use that button to log in.</p>
+    </div>
+
+    <!-- RESET (from email link) -->
+    <div class="view" id="view-reset">
+      <h1>Choose a new password</h1>
+      <p class="sub">Make it strong and unique to this account.</p>
+      <div class="alert" id="alert-reset" role="alert"></div>
+      <form id="reset-form" novalidate>
+        <div class="field">
+          <label for="rs-pw">New password</label>
+          <div class="input-wrap"><svg class="i"><use href="#i-key"/></svg><input class="input has-toggle" id="rs-pw" name="password" type="password" autocomplete="new-password" required>
+            <button type="button" class="toggle-pw" aria-label="Show password" aria-pressed="false"><svg class="i"><use href="#i-eye"/></svg></button></div>
+          <div class="meter" aria-hidden="true"><i></i></div>
+          <ul class="rules"><li data-rule="len">8+ characters</li><li data-rule="case">Upper &amp; lower case</li><li data-rule="num">A number</li><li data-rule="sym">A symbol</li></ul>
+          <span class="error-msg"><svg class="i i-sm"><use href="#i-alert"/></svg>Use at least 8 characters with a mix of letters and numbers.</span>
+        </div>
+        <div class="field">
+          <label for="rs-pw2">Confirm new password</label>
+          <div class="input-wrap"><svg class="i"><use href="#i-key"/></svg><input class="input" id="rs-pw2" name="password2" type="password" autocomplete="new-password" required></div>
+          <span class="error-msg"><svg class="i i-sm"><use href="#i-alert"/></svg>Passwords don't match.</span>
+        </div>
+        <button class="btn btn-navy btn-block" type="submit"><span class="spinner"></span><span>Update password</span></button>
+      </form>
+    </div>
+
+    <!-- CHECK EMAIL -->
+    <div class="view" id="view-check">
+      <div style="text-align:center">
+        <div class="card-icon" style="margin:0 auto 12px;width:56px;height:56px"><svg class="i i-lg"><use href="#i-send"/></svg></div>
+        <h1 id="check-title">Check your email</h1>
+        <p class="sub" id="check-sub">We sent a link to your inbox.</p>
+        <div id="check-extra"></div>
+        <button class="btn btn-outline btn-block" id="resend" type="button" hidden>Resend email</button>
+        <p class="fineprint"><a href="?view=login" class="link" data-view-link="login">Back to log in</a></p>
+      </div>
+    </div>
+  </div>
+  <p class="fineprint" style="max-width:440px">Need help with your account? Contact the PADPAO EV Public Relations Office.</p>
+</main>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/auth-page.js"></script>
+</body>
+</html>
